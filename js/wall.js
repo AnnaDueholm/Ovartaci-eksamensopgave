@@ -108,13 +108,10 @@ const defaultStories = [
 // Her henter jeg wall-containeren fra html
 const wall = document.querySelector("#wall");
 
-// Her forsøger jeg at hente stories fra localStorage.
-// Hvis der ikke findes noget gemt endnu,
-// bruges defaultStories i stedet.
+// Her forsøger jeg at hente stories fra localStorage.Hvis der ikke findes noget gemt endnu, bruges defaultStories i stedet.
 const stories = JSON.parse(localStorage.getItem("stories")) || defaultStories;
 
-// Her opretter jeg funktionen displayStories,
-// som skal vise historierne på væggen
+// Her opretter jeg funktionen displayStories, som skal vise historierne på væggen
 function displayStories() {
   // Her filtrerer jeg arrayet,
   // så kun historier med tekst bliver vist.
@@ -139,6 +136,5 @@ function displayStories() {
   wall.innerHTML = html;
 }
 
-// Her kalder jeg funktionen,
-// så historierne vises på siden.
+// Her kalder jeg funktionen, så historierne vises på siden.
 displayStories();

@@ -27,8 +27,6 @@ const defaultStories = [
     text: "Jeg lærte tidligt at skjule mine følelser.",
   },
 
-  // Tomme pladser til gæster
-
   { id: 6, text: "" },
   { id: 7, text: "" },
   { id: 8, text: "" },

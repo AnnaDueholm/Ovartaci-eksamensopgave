@@ -27,8 +27,6 @@ const defaultStories = [
     text: "Jeg lærte tidligt at skjule mine følelser.",
   },
 
-  // Tomme pladser til gæster
-
   { id: 6, text: "" },
   { id: 7, text: "" },
   { id: 8, text: "" },
@@ -46,9 +44,7 @@ const defaultStories = [
   { id: 20, text: "" },
 ];
 
-// Her forsøger jeg at hente stories fra localStorage.
-// Hvis der ikke findes noget gemt endnu,
-// bruges defaultStories i stedet.
+// Her forsøger jeg at hente stories fra localStorage.Hvis der ikke findes noget gemt endnu, bruges defaultStories i stedet.
 let stories = JSON.parse(localStorage.getItem("stories")) || defaultStories;
 
 // Her henter jeg den midlertidige besked fra localStorage
@@ -65,14 +61,12 @@ previewText.textContent = pendingStory;
 
 // Her lytter jeg efter klik på confirm-knappen
 confirmButton.addEventListener("click", () => {
-  // Her finder jeg det første objekt
-  // hvor text er tom
+  // Her finder jeg det første objekt hvor text er tom
   const emptyStory = stories.find((story) => {
     return story.text === "";
   });
 
-  // Hvis der findes en tom plads,
-  // indsættes brugerens tekst
+  // Hvis der findes en tom plads, indsættes brugerens tekst
   if (emptyStory) {
     emptyStory.text = pendingStory;
   }
@@ -85,4 +79,14 @@ confirmButton.addEventListener("click", () => {
 
   // Her sendes brugeren videre til wall-siden
   window.location.href = "wall.html";
+});
+
+/////////////////// TILBAGE KNAP /////////////////////////
+// Her henter jeg tilbage-knappen fra html
+const backButton = document.querySelector("#confirm-back-btn");
+
+// Her lytter jeg efter klik på tilbage-knappen
+backButton.addEventListener("click", () => {
+  // Her sendes brugeren tilbage til input-siden
+  window.location.href = "input.html";
 });
