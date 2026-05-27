@@ -1,8 +1,6 @@
 "use strict";
 
 // Her opretter jeg et array med standard-historier.
-// De første 5 historier er faste historier.
-// Resten er tomme pladser til gæster.
 const defaultStories = [
   {
     id: 1,
@@ -53,26 +51,38 @@ const defaultStories = [
 // bruges defaultStories i stedet.
 let stories = JSON.parse(localStorage.getItem("stories")) || defaultStories;
 
-// Her henter jeg inputfeltet fra html
-const input = document.querySelector("#story-input");
+// Her henter jeg den midlertidige besked fra localStorage
+const pendingStory = localStorage.getItem("pendingStory");
 
-// Her henter jeg knappen fra html
-const button = document.querySelector("#send-btn");
+// Her henter jeg preview-teksten fra html
+const previewText = document.querySelector("#preview-text");
 
-// Her lytter jeg efter klik på knappen
-button.addEventListener("click", () => {
-  // Her gemmes brugerens input i en variabel
-  const userText = input.value.trim();
+// Her henter jeg confirm-knappen fra html
+const confirmButton = document.querySelector("#confirm-btn");
 
-  // Hvis inputfeltet er tomt,
-  // stopper funktionen
-  if (userText === "") {
-    return;
+// Her vises brugerens besked på siden
+previewText.textContent = pendingStory;
+
+// Her lytter jeg efter klik på confirm-knappen
+confirmButton.addEventListener("click", () => {
+  // Her finder jeg det første objekt
+  // hvor text er tom
+  const emptyStory = stories.find((story) => {
+    return story.text === "";
+  });
+
+  // Hvis der findes en tom plads,
+  // indsættes brugerens tekst
+  if (emptyStory) {
+    emptyStory.text = pendingStory;
   }
 
-  // Her gemmes brugerens besked midlertidigt i localStorage
-  localStorage.setItem("pendingStory", userText);
+  // Her gemmes det opdaterede array i localStorage
+  localStorage.setItem("stories", JSON.stringify(stories));
 
-  // Her sendes brugeren videre til confirm-siden
-  window.location.href = "confirm.html";
+  // Her fjernes den midlertidige besked fra localStorage
+  localStorage.removeItem("pendingStory");
+
+  // Her sendes brugeren videre til wall-siden
+  window.location.href = "wall.html";
 });
