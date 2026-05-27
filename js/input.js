@@ -1,8 +1,6 @@
 "use strict";
 
-// Her opretter jeg et array med standard-historier.
-// De første 5 historier er faste historier.
-// Resten er tomme pladser til gæster.
+// Her opretter jeg et array med standard-historier. De første 5 historier er faste historier. Resten er tomme pladser til gæster.
 const defaultStories = [
   {
     id: 1,
@@ -48,9 +46,7 @@ const defaultStories = [
   { id: 20, text: "" },
 ];
 
-// Her forsøger jeg at hente stories fra localStorage.
-// Hvis der ikke findes noget gemt endnu,
-// bruges defaultStories i stedet.
+// Her forsøger jeg at hente stories fra localStorage. Hvis der ikke findes noget gemt endnu, bruges defaultStories i stedet.
 let stories = JSON.parse(localStorage.getItem("stories")) || defaultStories;
 
 // Her henter jeg inputfeltet fra html
@@ -64,8 +60,7 @@ button.addEventListener("click", () => {
   // Her gemmes brugerens input i en variabel
   const userText = input.value.trim();
 
-  // Hvis inputfeltet er tomt,
-  // stopper funktionen
+  // Hvis inputfeltet er tomt, stopper funktionen
   if (userText === "") {
     return;
   }
@@ -75,4 +70,14 @@ button.addEventListener("click", () => {
 
   // Her sendes brugeren videre til confirm-siden
   window.location.href = "confirm.html";
+});
+
+/////////////////// TILBAGE KNAP /////////////////////////
+// Her henter jeg tilbage-knappen fra html
+const backButton = document.querySelector("#input-back-btn");
+
+// Her lytter jeg efter klik på tilbage-knappen
+backButton.addEventListener("click", () => {
+  // Her sendes brugeren tilbage til input-siden
+  window.location.href = "start.html";
 });
