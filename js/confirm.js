@@ -44,7 +44,7 @@ const defaultStories = [
   { id: 20, text: "" },
 ];
 
-// Her forsøger jeg at hente stories fra localStorage.Hvis der ikke findes noget gemt endnu, bruges defaultStories i stedet.
+// Her forsøger jeg at hente stories fra localStorage. Hvis der ikke findes noget gemt endnu, bruges defaultStories i stedet.
 let stories = JSON.parse(localStorage.getItem("stories")) || defaultStories;
 
 // Her henter jeg den midlertidige besked fra localStorage
@@ -59,22 +59,33 @@ const confirmButton = document.querySelector("#confirm-btn");
 // Her vises brugerens besked på siden
 previewText.textContent = pendingStory;
 
-// Her lytter jeg efter klik på confirm-knappen
-confirmButton.addEventListener("click", () => {
-  // Her finder jeg det første objekt hvor text er tom
-  const emptyStory = stories.find((story) => {
-    return story.text === "";
-  });
+/////////////////// CONFIRM KNAP /////////////////////////
 
-  // Hvis der findes en tom plads, indsættes brugerens tekst
-  if (emptyStory) {
-    emptyStory.text = pendingStory;
+// Her lytter jeg efter klik på confirm-knappen
+// Her sørger jeg for at når alle 20 historier er fyldt ud, så vil den begynde at erstatte historier fra id 6
+confirmButton.addEventListener("click", () => {
+  // Her henter vi tallet for, hvilken plads næste besked skal indsættes på. Hvis der ikke findes et tal endnu, starter den ved 6, fordi id 1-5 er faste historier.
+  let currentIndex = Number(localStorage.getItem("currentIndex")) || 6;
+
+  // Her indsætter vi brugerens besked i arrayet. Vi skriver currentIndex - 1, fordi arrays starter på 0, men vores id’er starter på 1. Så id 6 ligger på plads 5 i arrayet
+  stories[currentIndex - 1].text = pendingStory;
+
+  // Her tæller vi én op, så næste bruger ikke overskriver samme plads, men går videre til næste.
+  currentIndex++;
+
+  // Hvis currentIndex bliver større end 20
+  // starter den forfra ved plads 6
+  if (currentIndex > 20) {
+    currentIndex = 6;
   }
 
-  // Her gemmes det opdaterede array i localStorage
+  // Her gemmer vi den nye plads i localStorage, så browseren husker, hvor næste besked skal placeres.
+  localStorage.setItem("currentIndex", currentIndex);
+
+  // Her gemmer vi hele det opdaterede stories array i localStorage. JSON.stringify bruges, fordi localStorage kun kan gemme tekst.
   localStorage.setItem("stories", JSON.stringify(stories));
 
-  // Her fjernes den midlertidige besked fra localStorage
+  // Her fjerner vi den midlertidige besked, fordi den nu er blevet gemt rigtigt i stories.
   localStorage.removeItem("pendingStory");
 
   // Her sendes brugeren videre til wall-siden
