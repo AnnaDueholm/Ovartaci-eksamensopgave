@@ -1,5 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#wall {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.story-text {
+  position: absolute;
+
+  color: black;
+
+  font-size: 1rem;
+
+  max-width: 300px;
+
+  opacity: 0.8;
+
+  animation: float 100s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
 }

@@ -20,6 +20,7 @@ body {
   background-color: #fffaee;
   font-family: "Inter", sans-serif;
   color: #402924;
+  align-items: center;
 }
 
 #input-back-btn {

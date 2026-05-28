@@ -14,4 +14,25 @@ body {
   background-repeat: no-repeat;
 
   height: 100vh;
+  background-color: #fffaee;
+  font-family: "Inter", sans-serif;
+  color: #402924;
+
+  min-height: 100vh;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #402924;
+
+  margin-bottom: 40px;
+
+  text-align: center;
 }

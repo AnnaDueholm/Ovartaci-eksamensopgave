@@ -125,7 +125,22 @@ function displayStories() {
       // Her returnerer jeg et p-tag
       // med historien fra objektet.
       return `
-        <p class="story-text">${story.text}</p>
+        <p 
+        class="story-text"
+
+       style="
+            left: ${Math.random() * 80}%;
+            top: ${Math.random() * 80}%;
+
+            max-width:
+            ${200 + Math.random() * 500}px;
+
+            animation-duration:
+            ${30 + Math.random() * 30}s;
+        "
+        >
+        ${story.text}
+        </p>
       `;
     })
 
