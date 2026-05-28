@@ -55,3 +55,30 @@ body{
   width: 80%;
   margin: 0 auto;
 }
+
+.keyboard{
+  width: 80%;
+  max-width: 1000px;
+  margin: 40px auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.key{
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  border: 2px solid #402924;
+  background-color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.key:hover {
+  transform: scale(0.95);
+}
