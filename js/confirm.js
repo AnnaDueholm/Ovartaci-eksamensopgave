@@ -89,7 +89,7 @@ confirmButton.addEventListener("click", () => {
   localStorage.removeItem("pendingStory");
 
   // Her sendes brugeren videre til wall-siden
-  window.location.href = "wall.html";
+  window.location.href = "thank-you.html";
 });
 
 /////////////////// TILBAGE KNAP /////////////////////////

@@ -1,6 +1,6 @@
 "use strict";
 
-//Samme array som i input.js
+// Her opretter jeg et array med historier.
 const defaultStories = [
   {
     id: 1,
