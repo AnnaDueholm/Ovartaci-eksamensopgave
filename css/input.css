@@ -3,3 +3,47 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-color: #FFFAEE;
+  font-family: "Inter", sans-serif;
+  color: #402924;
+}
+
+#input-back-btn{
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 8px;
+  align-self: flex-start;
+  margin-bottom: 40px;
+  margin-left: 2px;
+}
+
+#story-input{
+  width: 80%;
+  height: 30vh; 
+  border-color: #402924;  
+  border-radius: 8px;
+
+}
+
+#send-btn{
+  width: 20vh;
+  height: 5vh;
+  font-family: "Inter", sans-serif;
+  color: #402924;
+  font-size: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  align-self: flex-end;
+  margin-top: 30px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
