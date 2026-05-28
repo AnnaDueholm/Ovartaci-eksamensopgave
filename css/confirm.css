@@ -39,10 +39,10 @@ body {
   margin-top: 20px;
 }
 
-body p:first-of-type {
+p {
   font-size: 3rem;
   font-weight: 700;
-  color: #444;
+  color: #402924;
 
   margin-bottom: 40px;
 
@@ -53,7 +53,7 @@ body p:first-of-type {
   width: 780px;
   min-height: 180px;
 
-  border: 5px solid #555;
+  border: 5px solid #402924;
   border-radius: 10px;
 
   background-color: transparent;
@@ -61,7 +61,7 @@ body p:first-of-type {
   padding: 20px;
 
   font-size: 1.4rem;
-  color: #333;
+  color: #402924;
 
   margin-bottom: 45px;
 }

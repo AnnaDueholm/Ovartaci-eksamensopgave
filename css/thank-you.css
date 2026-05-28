@@ -27,7 +27,7 @@ body {
   justify-content: center;
 }
 
-body p:first-of-type {
+p {
   font-size: 3rem;
   font-weight: 700;
   color: #444;
