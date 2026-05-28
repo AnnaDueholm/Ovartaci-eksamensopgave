@@ -1,42 +1,54 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  background-color: #FFFAEE;
+body {
+  background-image: url("../img/bg-photo.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  height: 100vh;
 }
 
-h1{
-color: #402924;
-font-family: "Inter", sans-serif;
-text-align: center;
-padding-top: 60px;
-padding-bottom: 30px;
+body {
+  background-color: #fffaee;
 }
 
-h2{
-color: #402924;
-font-family: "Inter", sans-serif;
-display: flex;
-flex-direction: column;
-align-items: center; 
-padding: 5px;
+h1 {
+  color: #402924;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
 }
 
-img{
-width: 50px;
-position:relative;
-left: 580px;
-top: 50px;
+h2 {
+  color: #402924;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
 }
 
-h3{
-color: #402924;
-font-family: "Inter", sans-serif;    
-text-align: right;
-padding-right: 600px;
+img {
+  width: 50px;
+  position: relative;
+  left: 580px;
+  top: 50px;
+}
+
+h3 {
+  color: #402924;
+  font-family: "Inter", sans-serif;
+  text-align: right;
+  padding-right: 600px;
 }
 
 .lineText {
@@ -45,8 +57,8 @@ padding-right: 600px;
   position: relative;
   top: 90px;
   gap: 20px;
-  width: 80%; 
-  margin: 0 auto; 
+  width: 80%;
+  margin: 0 auto;
 }
 
 .line {
