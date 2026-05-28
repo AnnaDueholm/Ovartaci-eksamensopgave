@@ -27,8 +27,6 @@ body {
 }
 
 #confirm-back-btn {
-  align-self: flex-start;
-
   background: none;
   border: none;
   font-size: 28px;
