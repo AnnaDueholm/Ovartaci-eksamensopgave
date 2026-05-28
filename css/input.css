@@ -18,7 +18,8 @@ body{
   border-radius: 8px;
   align-self: flex-start;
   margin-bottom: 40px;
-  margin-left: 2px;
+  margin-top: 20px;
+  
 }
 
 #story-input{
@@ -26,7 +27,8 @@ body{
   height: 30vh; 
   border-color: #402924;  
   border-radius: 8px;
-
+  font-family: "Inter", sans-serif;
+  padding: 1%;
 }
 
 #send-btn{
@@ -35,6 +37,9 @@ body{
   font-family: "Inter", sans-serif;
   color: #402924;
   font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
   background: #ffffff;
   border-radius: 8px;
   align-self: flex-end;
@@ -44,6 +49,7 @@ body{
 .input {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 80%;
   margin: 0 auto;
 }
