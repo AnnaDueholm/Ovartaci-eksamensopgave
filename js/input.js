@@ -49,27 +49,98 @@ backButton.addEventListener("click", () => {
 //her tager jeg fat i mine html elementer 
 const textBox = document.querySelector("#story-input");
 const keys = document.querySelectorAll(".key");
+let capsLock = false;
 
-//Virtuel keyboard 
+//VIRTUELT keyboard 
 
-//if sætning indsættes, så koden stopper hvis keys eller tekstfeltet ikke kan findes 
 //forEach bruges til at gennemløbe alle knapperne, og der sættes en addListener på, som lytter på knapper og kører koden når der trykkes, og teksten bliver skrevet i tekstboksen. 
-if (textBox && keys.length > 0) {
-  keys.forEach(key => {
-    key.addEventListener("click", () => {
-      textBox.value += key.innerText;
-      });
-      });
+keys.forEach((key) => {
+
+  key.addEventListener("click", () => {
+
+    const keyType = key.dataset.key;
+    const value = key.innerText;
+
+    // SPACE
+    if (keyType === "space") {
+      textBox.value += " ";
+      return;
     }
 
-//Fysisk keyboard 
-//lytter efter om en tast bliver trykket ned
-//if sætning indsættes, så koden stopper hvis keys eller tekstfeltet ikke kan findes 
-document.addEventListener("keydown", (event) => {     
-  if (!textBox) return;
+    // ENTER
+    if (keyType === "enter") {
+      textBox.value += "\n";
+      return;
+    }
 
-//sørger for at kun "almindelige taster" kan trykkes ned 
+    // DELETE
+    if (keyType === "delete") {
+      textBox.value = textBox.value.slice(0, -1);
+      return;
+    }
+
+    // CAPS
+    if (keyType === "caps") {
+      capsLock = !capsLock;
+      return;
+    }
+
+    // STORE / små bogstaver
+    let finalValue;
+
+    if (capsLock) {
+      finalValue = value.toUpperCase();
+    } else {
+      finalValue = value.toLowerCase();
+    }
+
+    textBox.value += finalValue;
+
+  });
+
+});
+    
+
+//FYSISK keyboard 
+
+document.addEventListener("keydown", (event) => {
+
+  // DELETE knap
+  if (event.key === "Backspace") {
+    textBox.value = textBox.value.slice(0, -1);
+    return;
+  }
+
+  // ENTER knap
+  if (event.key === "Enter") {
+    textBox.value += "\n";
+    return;
+  }
+
+  // SPACE knap
+  if (event.key === " ") {
+    textBox.value += " ";
+    return;
+  }
+
+  // CAPS via fysisk keyboard
+  if (event.key === "CapsLock") {
+    capsLock = !capsLock;
+    return;
+  }
+
+  // Almindelige taster 
   if (event.key.length === 1) {
-    textBox.value += event.key;
+
+    let finalValue;
+
+    if (capsLock) {
+      finalValue = event.key.toUpperCase();
+    } else {
+      finalValue = event.key.toLowerCase();
     }
-    });
+
+    textBox.value += finalValue;
+  }
+
+});
