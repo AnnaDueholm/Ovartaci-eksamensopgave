@@ -18,7 +18,7 @@
 
   opacity: 0.8;
 
-  animation: float 40s linear infinite;
+  animation: float 100s linear infinite;
 }
 
 @keyframes float {

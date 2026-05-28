@@ -136,7 +136,7 @@ function displayStories() {
             ${200 + Math.random() * 500}px;
 
             animation-duration:
-            ${15 + Math.random() * 15}s;
+            ${30 + Math.random() * 30}s;
         "
         >
         ${story.text}
