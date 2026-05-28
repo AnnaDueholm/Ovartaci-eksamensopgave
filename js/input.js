@@ -53,15 +53,24 @@ const input = document.querySelector("#story-input");
 // Her henter jeg knappen fra html
 const button = document.querySelector("#send-btn");
 
+const errorMessage = document.querySelector("#error-message");
+
+/////////////////// INDSEND KNAP /////////////////////////
+
 // Her lytter jeg efter klik på knappen
 button.addEventListener("click", () => {
   // Her gemmes brugerens input i en variabel
   const userText = input.value.trim();
 
-  // Hvis inputfeltet er tomt, stopper funktionen
+  // Hvis inputfeltet er tomt,
+  // vises en fejlbesked
   if (userText === "") {
+    errorMessage.textContent = "Inputfeltet er tomt.";
     return;
   }
+
+  // Her fjernes fejlbeskeden igen
+  errorMessage.textContent = "";
 
   // Her gemmes brugerens besked midlertidigt i localStorage
   localStorage.setItem("pendingStory", userText);
