@@ -14,8 +14,8 @@
   --font-size-l: 2rem;
   --font-size-m: 1.6rem;
 
-  --font-weight-l: 800;
-  --font-weight-m: 700;
+  --font-weight-l: 600;
+  --font-weight-m: 400;
 }
 
 body {
@@ -42,7 +42,7 @@ h1 {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-l);
 
-  margin-top: 120px;
+  margin-top: 160px;
   margin-bottom: 40px;
 }
 
@@ -53,8 +53,8 @@ h1 em {
 h2 {
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-m);
-
-  margin-bottom: 15px;
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 .press-to-start {
@@ -71,5 +71,5 @@ h2 {
 
 .press-to-start h3 {
   font-size: var(--font-size-m);
-  font-weight: var(--font-weight-m);
+  font-weight: var(--font-weight-l);
 }

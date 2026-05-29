@@ -9,6 +9,8 @@
 :root {
   --text-color: #402924;
   --bg-color: white;
+  --btn-color: #f4e5c1;
+
   --font: "Inter", sans-serif;
   --font-size-l: 6vh;
   --font-size-s: 4vh;
@@ -73,16 +75,16 @@ body {
 #send-btn {
   width: 160px;
   height: 50px;
-
   margin-top: 30px;
 
   align-self: flex-end;
 
-  background-color: #f1efef;
+  background-color: var(--btn-color);
   color: var(--text-color);
   border-radius: 10px;
 
   font-size: 2rem;
+  border: none;
 
   cursor: pointer;
 }

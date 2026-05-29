@@ -78,7 +78,7 @@ body {
 p:first-of-type {
   font-size: var(--font-size-l);
 
-  font-weight: var(--font-weight-l);
+  font-weight: var(--font-weight-s);
 
   color: var(--text-color);
 
@@ -113,14 +113,15 @@ p:first-of-type {
   width: 190px;
   height: 70px;
 
-  border: 2px solid var(--text-color);
   border-radius: 10px;
 
-  background: var(--bg-color);
+  background-color: #f4e5c1;
 
   color: var(--text-color);
 
   font-size: 2rem;
 
   cursor: pointer;
+
+  border: none;
 }
