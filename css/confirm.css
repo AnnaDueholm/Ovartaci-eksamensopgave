@@ -9,6 +9,8 @@
 :root {
   --text-color: #402924;
   --bg-color: white;
+  --btn-color: #f4e5c1;
+
   --font: "Inter", sans-serif;
   --font-size-l: 6vh;
   --font-size-s: 4vh;
@@ -45,8 +47,8 @@ body {
 
 #confirm-back-btn {
   align-self: flex-start;
-
-  margin-top: 20px;
+  margin-top: 40px;
+  width: 50px;
 }
 
 .confirm-content {
@@ -115,7 +117,7 @@ p:first-of-type {
 
   border-radius: 10px;
 
-  background-color: #f4e5c1;
+  background-color: var(--btn-color);
 
   color: var(--text-color);
 

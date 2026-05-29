@@ -3,5 +3,5 @@
 // Lytter efter klik hvor som helst på siden
 document.addEventListener("click", () => {
   // Sender brugeren videre til næste side
-  window.location.href = "input.html";
+  window.location.href = "choice.html";
 });
