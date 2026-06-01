@@ -5,12 +5,16 @@
   height: 100vh;
 
   overflow: hidden;
+  background: #402924;
 }
 
 .story-text {
   position: absolute;
+  border-radius: 240px;
+  background: rgba(194, 182, 121, 0.74);
+  padding: 10px;
 
-  color: black;
+  color: white;
 
   font-size: 1rem;
 
