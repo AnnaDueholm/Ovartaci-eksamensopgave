@@ -16,6 +16,7 @@
   --font-size-s: 4vh;
   --font-weight-l: 600;
   --font-weight-s: 400;
+  --back-btn-size: 60px;
 }
 
 body {
@@ -58,13 +59,13 @@ body {
 
 #confirm-back-btn {
   align-self: flex-start;
-  margin-top: 40px;
+  margin-top: 20px;
   background: none;
   border: none;
 
   color: var(--text-color);
 
-  font-size: var(--font-size-s);
+  font-size: var(--back-btn-size);
 
   cursor: pointer;
 

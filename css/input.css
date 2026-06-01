@@ -16,7 +16,7 @@
   --font-size-s: 4vh;
   --font-weight-l: 600;
   --font-weight-s: 400;
-  --back-btn-size: 6vh;
+  --back-btn-size: 60px;
 }
 
 body {
@@ -42,7 +42,7 @@ body {
 }
 
 #input-back-btn {
-  margin-top: 40px;
+  margin-top: 20px;
   background: none;
   border: none;
 
@@ -77,7 +77,7 @@ body {
 #send-btn {
   width: 160px;
   height: 50px;
-  margin-top: 30px;
+  margin-top: 10px;
 
   align-self: flex-end;
 
@@ -104,7 +104,7 @@ body {
   border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .keyboard-row {
@@ -132,4 +132,6 @@ body {
   width: 300px;
 }
 
-.key:hover { transform: scale(0.95); }
+.key:hover {
+  transform: scale(0.95);
+}
