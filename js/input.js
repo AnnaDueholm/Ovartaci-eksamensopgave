@@ -40,24 +40,22 @@ const backButton = document.querySelector("#input-back-btn");
 // Her lytter jeg efter klik på tilbage-knappen
 backButton.addEventListener("click", () => {
   // Her sendes brugeren tilbage til input-siden
-  window.location.href = "start.html";
+  window.location.href = "choice.html";
 });
 
 /////////////////// TASTATUR /////////////////////////
 
-//Keyboard gøres funktionelt 
-//her tager jeg fat i mine html elementer 
+//Keyboard gøres funktionelt
+//her tager jeg fat i mine html elementer
 const textBox = document.querySelector("#story-input");
 const keys = document.querySelectorAll(".key");
 let capsLock = false;
 
-//VIRTUELT keyboard 
+//VIRTUELT keyboard
 
-//forEach bruges til at gennemløbe alle knapperne, og der sættes en addListener på, som lytter på knapper og kører koden når der trykkes, og teksten bliver skrevet i tekstboksen. 
+//forEach bruges til at gennemløbe alle knapperne, og der sættes en addListener på, som lytter på knapper og kører koden når der trykkes, og teksten bliver skrevet i tekstboksen.
 keys.forEach((key) => {
-
   key.addEventListener("click", () => {
-
     const keyType = key.dataset.key;
     const value = key.innerText;
 
@@ -95,7 +93,9 @@ keys.forEach((key) => {
     }
 
     textBox.value += finalValue;
-
   });
 
 });
+
+
+
