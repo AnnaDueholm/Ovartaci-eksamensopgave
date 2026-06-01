@@ -130,3 +130,5 @@ body {
 .space-key {
   width: 300px;
 }
+
+.key:hover { transform: scale(0.95); }
