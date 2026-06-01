@@ -10,6 +10,7 @@ backButton.addEventListener("click", () => {
   window.location.href = "start.html";
 });
 
+/////////////////// VIDERE KNAP /////////////////////////
 const tapScreen = document.querySelector("#tap");
 
 tapScreen.addEventListener("click", () => {

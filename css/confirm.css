@@ -12,10 +12,8 @@
   --btn-color: #f4e5c1;
 
   --font: "Inter", sans-serif;
-  --font-size-l: 6vh;
-  --font-size-s: 4vh;
-  --font-weight-l: 600;
-  --font-weight-s: 400;
+  --font-size: 2rem;
+  --font-weight: 400;
   --back-btn-size: 60px;
 }
 
@@ -54,7 +52,7 @@ body {
 
   align-items: center;
 
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 #confirm-back-btn {
@@ -75,9 +73,9 @@ body {
 }
 
 p:first-of-type {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size);
 
-  font-weight: var(--font-weight-s);
+  font-weight: var(--font-weight);
 
   color: var(--text-color);
 
@@ -87,16 +85,13 @@ p:first-of-type {
 }
 
 #preview-text {
-  width: 80%;
-  min-height: 250px;
+  width: 960px;
+  min-height: 200px;
 
   border: 2px solid var(--text-color);
   border-radius: 10px;
 
   background: var(--bg-color);
-
-  padding: 20px;
-
   font-size: 2rem;
 
   display: flex;
@@ -118,7 +113,7 @@ p:first-of-type {
 
   color: var(--text-color);
 
-  font-size: 2rem;
+  font-size: var(--font-size);
 
   cursor: pointer;
 
