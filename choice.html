@@ -11,27 +11,28 @@
     </style>
   </head>
   <body>
-    <div class="choice-screen">
-      <section class="choice-container">
-        <div class="choice" id="use-screen">
-          <h2>Tryk for at starte</h2>
-          <p>For at bruge denne skærm til<br />at skrive på</p>
-          <img src="img/tap.png" alt="Tryk ikon" />
+    <section class="choice-screen">
+      <button id="choice-back-btn">↩</button>
+
+      <div class="choice-content">
+        <div class="choice-container">
+          <div class="choice">
+            <h2>På skærmen</h2>
+            <p>Skriv din besked direkte på skærmen</p>
+            <img src="img/tap.png" alt="" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="choice">
+            <h2>Via QR-kode</h2>
+            <p>Skriv fra din egen telefon</p>
+            <img class="qr-code" src="img/qr-code.png" alt="" />
+          </div>
         </div>
 
-        <div class="divider"></div>
-
-        <div class="choice">
-          <h2>Scan QR-koden</h2>
-          <p>For at skrive fra din egen<br />telefon</p>
-          <img class="qr-code" src="img/qr-code.png" alt="QR-kode" />
-        </div>
-      </section>
-
-      <p class="privacy-text">
-        Din indsendelse er anonym – uanset om du skriver fra vores skærm eller
-        din egen telefon
-      </p>
-    </div>
+        <p class="privacy-text">Din besked kan deles anonymt</p>
+      </div>
+    </section>
   </body>
 </html>

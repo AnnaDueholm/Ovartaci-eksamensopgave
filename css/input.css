@@ -7,7 +7,7 @@
 /*VARIABLER*/
 
 :root {
-  --text-color: #402924;
+  --text-color: #484848;
   --bg-color: white;
   --btn-color: #f4e5c1;
 
@@ -16,6 +16,7 @@
   --font-size-s: 4vh;
   --font-weight-l: 600;
   --font-weight-s: 400;
+  --back-btn-size: 6vh;
 }
 
 body {
@@ -47,7 +48,7 @@ body {
 
   color: var(--text-color);
 
-  font-size: var(--font-size-s);
+  font-size: var(--back-btn-size);
 
   cursor: pointer;
 

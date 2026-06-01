@@ -7,7 +7,7 @@
 /*VARIABLER*/
 
 :root {
-  --text-color: #402924;
+  --text-color: #484848;
   --bg-color: white;
   --btn-color: #f4e5c1;
 
@@ -45,11 +45,6 @@ body {
   align-items: center;
 }
 
-#confirm-back-btn {
-  align-self: flex-start;
-  margin-top: 40px;
-}
-
 .confirm-content {
   flex: 1;
 
@@ -62,6 +57,8 @@ body {
 }
 
 #confirm-back-btn {
+  align-self: flex-start;
+  margin-top: 40px;
   background: none;
   border: none;
 
