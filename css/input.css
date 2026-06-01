@@ -7,7 +7,7 @@
 /*VARIABLER*/
 
 :root {
-  --text-color: #484848;
+  --text-color: #402924;
   --bg-color: white;
   --btn-color: #f4e5c1;
 
@@ -40,7 +40,7 @@ p {
   font-size: var(--font-size);
   font-family: var(--font);
   font-weight: var(--font-weight);
-  color: #484848;
+  color: var(--text-color);
   line-height: 1.25;
   text-align: center;
 
