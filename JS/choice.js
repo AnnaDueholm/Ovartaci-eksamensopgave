@@ -1,9 +1,5 @@
 "use strict";
 
-document.addEventListener("click", () => {
-  window.location.href = "input.html";
-});
-
 /////////////////// TILBAGE KNAP /////////////////////////
 // Her henter jeg tilbage-knappen fra html
 const backButton = document.querySelector("#choice-back-btn");
@@ -12,4 +8,10 @@ const backButton = document.querySelector("#choice-back-btn");
 backButton.addEventListener("click", () => {
   // Her sendes brugeren tilbage til input-siden
   window.location.href = "start.html";
+});
+
+const tapScreen = document.querySelector("#tap");
+
+tapScreen.addEventListener("click", () => {
+  window.location.href = "input.html";
 });
