@@ -51,8 +51,6 @@ const textBox = document.querySelector("#story-input");
 const keys = document.querySelectorAll(".key");
 let capsLock = false;
 
-//VIRTUELT keyboard
-
 //forEach bruges til at gennemløbe alle knapperne, og der sættes en addListener på, som lytter på knapper og kører koden når der trykkes, og teksten bliver skrevet i tekstboksen.
 keys.forEach((key) => {
   key.addEventListener("click", () => {
@@ -94,8 +92,4 @@ keys.forEach((key) => {
 
     textBox.value += finalValue;
   });
-
 });
-
-
-

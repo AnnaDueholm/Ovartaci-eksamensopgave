@@ -51,6 +51,7 @@ p {
   width: 80%;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 #input-back-btn {
@@ -104,7 +105,7 @@ p {
 }
 
 #error-message {
-  color: red;
+  color: rgb(225, 0, 0);
   margin-top: 10px;
   font-size: var(--font-size-error);
   text-align: left;

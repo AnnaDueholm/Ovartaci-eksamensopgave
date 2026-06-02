@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Inter", sans-serif;
+}
+
 #wall {
   position: relative;
 
@@ -11,10 +21,11 @@
 .story-text {
   position: absolute;
   border-radius: 240px;
-  background: rgba(194, 182, 121, 0.74);
   padding: 10px;
+  font-family: var(--font);
+  text-align: center;
 
-  color: white;
+  color: #fffaee;
 
   font-size: 1rem;
 

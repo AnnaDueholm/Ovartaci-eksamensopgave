@@ -85,8 +85,9 @@ p:first-of-type {
 }
 
 #preview-text {
-  width: 960px;
+  max-width: 960px;
   min-height: 200px;
+  padding: 10px;
 
   border: 2px solid var(--text-color);
   border-radius: 10px;
