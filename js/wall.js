@@ -132,7 +132,7 @@ function displayStories() {
       left: ${Math.random() * 80}%;
       top: ${Math.random() * 80}%;
 
-      max-width: ${200 + Math.random() * 500}px;
+      max-width: ${400 + Math.random() * 500}px;
 
       animation-duration: ${30 + Math.random() * 30}s;
 
