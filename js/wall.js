@@ -128,16 +128,17 @@ function displayStories() {
         <p 
         class="story-text"
 
-      style="
-      left: ${Math.random() * 80}%;
-      top: ${Math.random() * 80}%;
+        style="
+          left: ${Math.random() * 80}%;
+          top: ${Math.random() * 80}%;
 
-      max-width: ${400 + Math.random() * 500}px;
+          max-width: ${400 + Math.random() * 500}px;
 
-      animation-duration: ${30 + Math.random() * 30}s;
+          animation-duration: ${30 + Math.random() * 40}s;
+          animation-delay: -${Math.random() * 30}s;
 
-      background-color: ${Math.random() < 0.5 ? "#C2B679BD" : "#9F8E96BD"};
-    "
+          background-color: ${Math.random() < 0.5 ? "#C2B679BD" : "#9F8E96BD"};
+        "
         >
         ${story.text}
         </p>
