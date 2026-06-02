@@ -140,7 +140,7 @@ function displayStories() {
           background-color: ${Math.random() < 0.5 ? "#C2B679BD" : "#9F8E96BD"};
         "
         >
-        ${story.text}
+        ${story.text.toLowerCase()}
         </p>
       `;
     })

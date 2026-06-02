@@ -75,12 +75,6 @@ keys.forEach((key) => {
       return;
     }
 
-    // CAPS
-    if (keyType === "caps") {
-      capsLock = !capsLock;
-      return;
-    }
-
     // STORE / små bogstaver
     let finalValue;
 
