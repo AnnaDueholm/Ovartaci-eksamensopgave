@@ -48,7 +48,6 @@ Projektet er opdelt efter separation of concerns, hvor HTML, CSS og JavaScript e
 - **README.md** indeholder dokumentation af projektet.
 
 ![Mappestruktur](img/file-structure.png)
-![Mappestruktur](img/file-structure.png)
 
 ## HTML-sider
 
