@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 "use strict";
 
 // Lytter efter klik hvor som helst på siden

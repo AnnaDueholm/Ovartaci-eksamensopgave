@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 "use strict";
 
 /////////////////// TILBAGE KNAP /////////////////////////
@@ -7,7 +8,7 @@ const backButton = document.querySelector("#choice-back-btn");
 // Her lytter jeg efter klik på tilbage-knappen
 backButton.addEventListener("click", () => {
   // Her sendes brugeren tilbage til input-siden
-  window.location.href = "start.html";
+  window.location.href = "index.html";
 });
 
 /////////////////// VIDERE KNAP /////////////////////////

@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 "use strict";
 
 // Her henter jeg inputfeltet fra html
