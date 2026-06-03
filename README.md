@@ -1,8 +1,41 @@
-# Om projektet
+# README
 
-"Sæt et aftryk" er en interaktiv installation udviklet til Ovartaci Museet.
+Dette procesdokument er udarbejdet af **Thilde Bisgaard Jakobsen** som en del af eksamensprojektet _"Sæt et aftryk"_ for Ovartaci Museet.
 
 Løsningen giver museumsgæster mulighed for anonymt at dele tanker, følelser og historier, som bliver vist på en digital væg.
+
+## Indhold
+
+1. Om projektet
+2. Filstruktur, kodestandarder og validering
+   - HTML-sider
+   - Kode-standarder
+   - Navngivning
+   - CSS-struktur
+   - Validering
+3. ORCA & datastruktur
+   - ORCA
+   - defaultStories array
+   - Datatyper
+4. Centrale funktioner
+   - Mikrointeraktioner
+   - localStorage
+   - Håndtering af fyldt væg
+   - JSON.parse & JSON.stringify
+   - filter()
+   - map() og join()
+   - Template literals, inline styling & innerHTML
+   - toLowerCase()
+5. Styling i CSS
+   - :root
+   - Global reset
+   - Layout
+   - Keyboard
+   - Væggen
+   - Stories
+   - Animationer
+6. Samarbejde
+   - Commits
 
 # Filstruktur, kodestandarder og validering
 
@@ -14,6 +47,7 @@ Projektet er opdelt efter separation of concerns, hvor HTML, CSS og JavaScript e
 - **HTML-filerne** udgør projektets forskellige skærme og brugerflow.
 - **README.md** indeholder dokumentation af projektet.
 
+![Mappestruktur](img/file-structure.png)
 ![Mappestruktur](img/file-structure.png)
 
 ## HTML-sider
@@ -293,9 +327,9 @@ const html = filledStories
 
 ## template literals, inline styling & innerHTML
 
-- I funktionen `displayStories()` anvendes template literals til dynamisk at generere HTML ud fra de historier, der findes i arrayet. Ved hjælp af `${}` indsættes både historiens tekst og tilfældigt genererede CSS-værdier direkte i HTML-strukturen.
+- I funktionen `displayStories()` anvendes template literals til at generere HTML ud fra de historier, der findes i arrayet. Ved hjælp af `${}` indsættes både historiens tekst og CSS-værdier direkte i HTML-strukturen.
 
-- Der anvendes samtidig inline styling til at give hver historie en tilfældig placering, bredde, animationshastighed og baggrundsfarve. Dette skaber et levende og varieret udtryk på væggen.
+- Der anvendes samtidig inline styling til at give hver historie en tilfældig placering, bredde, animationshastighed og baggrundsfarve.
 
 - Funktionen `Math.random()` anvendes til at skabe variation i præsentationen af historierne på væggen. Her bruges den til at skabe variation i: background-color, animation-delay, animation duration, max-width på tekst-boblen, og placeringen af boblen på hhv. x og y-aksen
 
@@ -337,33 +371,48 @@ ${story.text.toLowerCase()}
 
 - Projektets CSS er opbygget med fokus på et ensartet visuelt udtryk på tværs af siderne. Der anvendes CSS-variabler i :root til blandt andet farver, fonte, skriftstørrelser, font-weight og størrelsen på tilbage-knapper. Det gør det lettere at genbruge de samme værdier på flere sider og ændre designet samlet ét sted.
 
-## global reset
+eks.
 
-- Der bruges også en global reset med \*, hvor margin og padding sættes til 0, og box-sizing sættes til border-box. Det giver et mere stabilt udgangspunkt for layoutet, fordi elementernes størrelse bliver lettere at styre.
+```css
+:root {
+  --text-color: #402924;
+  --bg-color: #fffaee;
+  --font: "Inter", sans-serif;
 
-## background-photo
+  --font-size-l: 2.5rem;
+  --font-size-m: 2rem;
+  --font-size-s: 1rem;
 
-- Baggrunden går igen på flere sider gennem background-image, background-size: cover, background-position: center og background-repeat: no-repeat. Det sikrer, at baggrundsbilledet fylder hele skærmen og placeres centralt.
+  --font-weight-l: 600;
+  --font-weight-s: 400;
+  --back-btn-size: 60px;
+}
+```
+
+## Global reset
+
+- Der anvendes en global reset (`*`) i projektet, hvor `margin` og `padding` sættes til `0`, og `box-sizing` sættes til `border-box`. Dette giver et mere ensartet udgangspunkt for stylingen på tværs af browsere.
 
 ## Layout
 
-- Layoutet er hovedsageligt bygget med Flexbox. Det bruges blandt andet til at centrere indhold, placere elementer i kolonner og skabe struktur på sider som startskærm, valgskærm, inputside og bekræftelsesside. For eksempel bruges `display: flex`, `flex-direction: column`, `align-items: center` og `justify-content:` center til at kontrollere elementernes placering.
+- Siderne er primært opbygget med Flexbox. Det bruges blandt andet til at centrere indhold og skabe struktur på de forskellige skærme i løsningen, såsom startside, valgside, inputside og bekræftelsesside.
 
 ## Keyboard
 
-- På input-siden er der stylet et tekstfelt, en send-knap og et visuelt tastatur. Tastaturet er bygget op med `.keyboard`, `.keyboard-row` og `.key`, hvor hver tast har fast bredde, højde, border og hover-effekt. Med .key:hover bruges `transform: scale(0.95)`, som giver brugeren visuel feedback, når en tast holdes over med musen.
+- På input-siden er der udviklet et virtuelt tastatur. Tastaturet er stylet med egne klasser til taster og rækker, og tasterne har en hover-effekt, som giver visuel feedback, når brugeren interagerer med dem.
 
 ## Væggen
 
-- Væggen er stylet med `#wall`, som fylder hele browserens bredde og højde med 100vw og 100vh. Den har position: relative, så historie-elementerne kan placeres frit inde i containeren med position: absolute. Samtidig bruges `overflow: hidden`, så historierne forsvinder uden for skærmens kant og ikke skaber scroll.
+- Væggen er bygget op omkring containeren `#wall`, som fylder hele skærmen. Historierne placeres frit på væggen ved hjælp af `position: absolute`, mens `overflow: hidden` sikrer, at indhold uden for skærmen ikke vises.
 
 ## Stories
 
-- Historierne vises med klassen `.story-text`. De har afrundede former med `border-radius`, lys tekstfarve, lav opacity og en flydende animation. De enkelte historier får desuden dynamisk styling fra JavaScript, hvor placering, bredde, animationshastighed og baggrundsfarve genereres tilfældigt.
+- Historierne vises med klassen `.story-text`. De er designet med afrundede former, gennemsigtighed og lyse tekstfarver for at passe til installationens visuelle udtryk.
+- Placering, størrelse, animationshastighed og baggrundsfarve genereres gennem JavaScript.
 
 ## Animationer
 
-- På væggen anvendes CSS-animationen `float`, som får historierne til at bevæge sig op gennem skærmen. Dette skaber et levende og dynamisk udtryk.
+- For at skabe liv på væggen anvendes animationen `float`, som får historierne til langsomt at bevæge sig op gennem skærmen.
 
 ```css
 @keyframes float {
@@ -383,9 +432,9 @@ Animationen tilknyttes hvert historieelement gennem klassen `.story-text`
 
 - Projektet er udviklet i fællesskab, hvor gruppen løbende har samarbejdet om struktur, funktionalitet og opsætning af koden. Til versionsstyring har vi anvendt GitHub, hvor alle gruppemedlemmer har været tilføjet som collaborators på repositoryet.
 
-- I den indledende fase arbejdede gruppen sammen om at udvikle sidernes struktur og funktionalitet.Efterfølgende forsøgte vi at opdele siderne mellem os, så hver person stod for styling af sine egne sider. Denne arbejdsmetode viste sig dog at skabe udfordringer, da siderne fik forskellige strukturer, hvilket gjorde det sværere at opnå et ensartet design.
+- I den indledende fase arbejdede vi sammen om at udvikle sidernes struktur og funktionalitet.Efterfølgende forsøgte vi at opdele siderne mellem os, så hver person stod for styling af sine egne sider. Denne arbejdsmetode viste sig dog at skabe udfordringer, da siderne fik forskellige strukturer, hvilket gjorde det sværere at opnå et ensartet design.
 
-- Derfor valgte gruppen at starte stylingarbejdet forfra og samle ansvaret hos én person. På den måde blev det lettere at bevare et fælles visuelt udtryk, genbruge CSS-komponenter og oprette varabler.
+- Derfor valgte vi at starte stylingarbejdet forfra og samle ansvaret hos én person. På den måde blev det lettere at bevare et fælles visuelt udtryk, genbruge CSS-komponenter og oprette varabler.
 
 ## Commits
 
