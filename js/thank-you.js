@@ -3,7 +3,7 @@
 
 //Skifter automatisk siden, når der er gået 10 sekunder
 setTimeout(() => {
-  window.location.href = "start.html";
+  window.location.href = "index.html";
 }, 10000);
 
 //Skifter siden til startsiden ved click
