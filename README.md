@@ -51,7 +51,7 @@ Projektet er opdelt efter separation of concerns, hvor HTML, CSS og JavaScript e
 
 ## HTML-sider
 
-- start.html
+- index.html
   Projektets startside.
 
 - choice.html
